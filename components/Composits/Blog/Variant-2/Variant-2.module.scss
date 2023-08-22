@@ -1,0 +1,12 @@
+.blog {
+    border-bottom: 1px solid #ffda00;
+    &:last-child{
+        border-bottom: none;
+    }
+    .body_copy{
+        min-height: 1px;
+    }
+    .author_details{
+        min-height: 1px;
+    }
+}

@@ -1,0 +1,47 @@
+.profile_card {    
+    min-height: 1px;
+    margin: auto;
+    text-align: left;
+
+    >div {
+        margin: 0;
+    }
+
+    .col_left {
+        padding: 0;
+    }
+
+    .col_right {
+        padding: 15px;
+        >a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    h6 {
+        margin-bottom: 0;
+        text-decoration: none;
+    }
+
+    blockquote {
+        margin-bottom: 10px;
+
+        &+section>ul {
+            justify-content: left;
+        }
+    }
+
+    .social_icon {
+        min-height: 1px;
+
+        a {
+            i {
+                font-size: 1.3rem;
+                margin-right: 10px;
+                color: rgb(173, 169, 169);
+            }
+        }
+    }
+
+}

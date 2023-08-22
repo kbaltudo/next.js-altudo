@@ -1,0 +1,45 @@
+.content_card_horizontal {
+    border-bottom: 1px solid #efefef;
+
+    .caption {
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    &:last-child {
+        border: none;
+    }
+    
+
+    @media screen and (min-width:768px) {       
+
+        .caption {
+            text-align: left;
+        }
+
+        &:nth-child(even) {
+            figure {
+                order: 2;
+            }
+
+            .caption {
+                text-align: right;
+            }
+        }
+    }
+    h5 {
+        overflow: hidden;
+        //text-overflow: ellipsis;
+       height: 45px;
+
+        &+div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

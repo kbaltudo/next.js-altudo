@@ -1,0 +1,21 @@
+.twoColumnTile{    
+    .col_left{
+        // .body_copy{
+        //     font-size: 20px;
+        //     font-weight: 300;
+        // }
+    }
+    .col_left,.col_right{
+        padding: 30px 30px;
+        background-size: cover;
+        background-position: center;
+    }
+    @media screen and (min-width:768px) {
+        .col_left,.col_right{
+            padding: 6rem;
+        }
+        .col_right{
+            padding-left: 3rem;            
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.faeturecard {
+    min-height: 1px;
+    border-bottom: 1px solid lightgrey;
+    .icon {
+        min-height: 1px;
+        text-align: left;
+    }
+
+    .caption {
+        min-height: 1px;
+    }
+
+    figure {
+        width: 35%;
+    }
+
+    h5 {
+        overflow: hidden;
+        //text-overflow: ellipsis;
+       height: 45px;
+
+        &+div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+    }
+    @media screen and (min-width:768px) {
+        border: none;
+    }
+}

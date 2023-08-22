@@ -1,0 +1,44 @@
+.blog {
+    min-height: 1px;
+
+    .body_copy {
+        min-height: 1px;
+
+        h3 {
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+
+            &::after {
+                content: "";
+                min-width: 250px;
+                width: 100%;
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #000;
+                height: 5px;
+
+            }
+        }
+
+        blockquote {
+            font-size: 18px;
+            font-weight: 500;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .modal_header{
+        margin-top: 70px;
+    }
+}
+.modal_scroll {
+    height: 50vh;
+    overflow-y: auto;
+}

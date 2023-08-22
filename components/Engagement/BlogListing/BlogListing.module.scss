@@ -1,0 +1,15 @@
+.blog_listing {
+
+    .blog_wrapper {
+        min-height: 1px;
+        &[data-round-image=true]{
+            figure{
+                img{
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+   
+}

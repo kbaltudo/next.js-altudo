@@ -1,0 +1,44 @@
+.authorimage {
+    padding-top: 15px;
+    img {
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+}
+.testimonialslider { 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 60px;
+    padding-top: 30px;
+    .slick-prev {
+        left: 15px;
+    }
+    .slick-next {
+        right: 15px;
+    }
+}
+.testimonialcard {
+    padding: 50px 15px;
+    font-size: 15px;
+    background-color: #7a7a7a;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: #00000073 0px 2px 10px;
+    color: #fff;
+    margin: 0 10px;
+    .quoteicon {
+        color: #8b89f1;
+        font-size: 20px;
+        margin: 0 10px;
+        position: relative;
+    }
+    .iconleft {
+        top: -5px;      
+    }
+    .iconright {
+        top: 5px;
+        
+    }
+}

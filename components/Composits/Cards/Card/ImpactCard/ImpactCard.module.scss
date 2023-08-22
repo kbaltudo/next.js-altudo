@@ -1,0 +1,18 @@
+.impact_card{
+    min-height: 1px;
+    h4 {
+        overflow: hidden;
+        //text-overflow: ellipsis;
+       height: 52px;
+
+        &+div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* number of lines to show */
+            line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

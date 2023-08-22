@@ -1,0 +1,53 @@
+.tabComponent{
+     ul{
+          border-bottom: none;
+          li{
+               [type=button]{
+                    color: #005eb8;
+                    font-weight: 700;
+                    border-radius: 0;
+                    &:hover{
+                         border: 1px solid #f3f3f3;
+                    }
+               }
+               [type=button][aria-selected=true]{              
+                    background-color: #f3f3f3;
+                    border-color: #f3f3f3;
+                    color: #005eb8;
+                    text-decoration: underline;
+               }
+          }
+     }
+
+     .tabContent{
+          background-color: #f3f3f3;
+     }
+
+     .tabRow{
+         .tabHead{
+               @media (min-width: 481px){
+                    padding-right: 0;
+               }
+         }
+         .tabDesc{
+               background-color: #f3f3f3;
+               @media (max-width: 480px){
+                    max-width: 94%;
+                    margin: auto;
+               }               
+          }
+     }
+
+     a{
+          color: #005eb8;  
+          font-weight: 700;        
+     }
+     a[aria-selected=true]{
+          background-color: #f3f3f3;
+          text-decoration: underline;
+     }
+}
+
+
+
+

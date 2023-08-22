@@ -1,0 +1,18 @@
+.contentTile{
+    background-size:cover;
+    figure{
+        position: relative;
+        //padding-top:50%;
+    }
+    .innerWrap{
+        max-width: 55rem;
+        margin:0 auto;
+        border-left: 5px solid #505050;
+        padding: 2rem 1.5rem;        
+        background-color: #fff;
+       
+    }
+    p,li,a,div{
+        font-size: 16px;
+    }
+}

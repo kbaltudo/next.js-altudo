@@ -1,0 +1,25 @@
+.blog {
+    border-bottom: 1px solid #ffda00;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .body_copy {
+        min-height: 1px;
+    }
+
+    .author_details {
+        min-height: 1px;
+    }
+
+    figure {
+        height: 350px;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
