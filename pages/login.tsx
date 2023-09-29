@@ -27,6 +27,7 @@ function LoginPage({ pageTemplate, pageResponse, provider, meta }: any) {
       // Successful login, redirect or perform other actions
       setLoggedIn(true);
       setCookie('logged', 'true');
+      setCookie('role', user.role);
       console.log('Login successful');
       router.push('/');
     } else {

@@ -86,6 +86,7 @@ function AuthorDetails(props: any) {
 
   // Check if user is logged in
   let isLoggedIn = getCookie('logged');
+  let checkRole =  getCookie('role');
 
   // Update form data
   const handlePost = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -601,7 +602,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h1 className="text-uppercase">{drupalData?.title}</h1>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#aboutModal"><FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#aboutModal"><FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               <h3 className="text-uppercase">
                 {drupalData?.field_designation}
@@ -664,7 +665,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h2 className="">Experience</h2>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#experienceModal"> <FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#experienceModal"> <FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               {drupalData?.field_experience?.items ? drupalData?.field_experience.items.map((experience: any, index: any) => (
                 <div
@@ -735,7 +736,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h2 className="">Education</h2>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#educationModal"> <FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#educationModal"> <FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               {drupalData?.field_education?.items ? drupalData?.field_education.items.map((education: any, index: any) => (
                 <div
@@ -809,7 +810,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h2 className="">Area of Focus</h2>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#skillModal"> <FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#skillModal"> <FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               <ul className="fa-ul mb-0">{drupalData?.field_area_of_focus?.items ? drupalData?.field_area_of_focus.items.map((focus: any, index: any) => (
                 <li key={index}>
@@ -854,7 +855,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h2 className="">Interest</h2>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#interestModal"> <FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#interestModal"> <FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               <Description id="interest" className="w-75">
                 {drupalData?.field_interest}
@@ -875,7 +876,7 @@ function AuthorDetails(props: any) {
               <div
                 className={Styles.updatebiobtn + " d-flex justify-content-between mb-3"}>
                 <h2 className="">Awards and Certifications</h2>
-                {isLoggedIn && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#awardModal"> <FontAwesomeIcon icon={faEdit} /></button>}
+                {isLoggedIn && checkRole=="admin" && <button type="button" className={"btn edit me-3 pt-0 "} data-bs-toggle="modal" data-bs-target="#awardModal"> <FontAwesomeIcon icon={faEdit} /></button>}
               </div>
               <ul className="fa-ul mb-0">
                 {drupalData?.field_awards ? drupalData?.field_awards.map((award: any, index: any) => (

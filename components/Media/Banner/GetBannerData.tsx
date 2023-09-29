@@ -37,7 +37,7 @@ export function GetBanner(data: any, provider: string) {
                 }
             }
             break;
-        case "contentful":
+        case "contentful":  
             returndata = {
                 'id': "",
                 'title': data?.title ? data.title : "",

@@ -695,3 +695,43 @@ body{
   height: 200px !important;
   overflow: scroll;
 }
+.cart-link a{
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  &:hover{
+    font-size: 32px;
+  }
+}
+.products-list{
+  .cart {
+    position: relative;
+    float: right;
+    display: block;
+    width: 60px;
+    height: 60px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+      z-index: 1;
+      font-size: 50px;
+      color: black;
+    .count {
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      z-index: 2;
+      font-size: 20px;
+      border-radius: 50%;
+      background: #d60b28;
+      width: 30px;
+      height: 30px;
+      line-height:30px;
+      display: block;
+      text-align: center;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+    }
+  }
+}

@@ -15,7 +15,7 @@ import {
     getContentfulCareerPage,
     getContentfulOurProfessionalPage
 } from "./contentful/api";
-import { getDrupalHomePage, getDrupalOurProfessionalPage, getPageTemplateDrupal, strapibioDetails, strapibioUpdatedDetails, getDrupalNewsAndStoriesPage, getDrupalAboutPage } from "./drupal/api";
+import { getDrupalHomePage, getDrupalOurProfessionalPage, getPageTemplateDrupal, strapibioDetails, strapibioUpdatedDetails, getDrupalNewsAndStoriesPage, getDrupalAboutPage, getDrupalProductsPage } from "./drupal/api";
 import { getContentStackHomePage } from "./contentstack/api";
 
 // import { strapiPageTemplate } from "./strapi/api";
@@ -137,6 +137,42 @@ export async function aboutRouter() {
                 "provider": "strapi",
                 "data": (await strapiHomePage()) ?? [],
                 "pagetemplate": (await getPageTemplate()) ?? []
+            }
+            break;
+    }
+    return returnData;
+}
+
+export async function productsRouter() {
+    const { features } = await getGrowthbookFeatures()
+    // get provider from multiple provider from growthbook
+    let provider = null
+    if (features?.strapi?.defaultValue)
+        provider = 'contentful'
+    else if (features?.contentful?.defaultValue)
+        provider = 'contentful'
+    else if (features?.wordpress?.defaultValue)
+        provider = 'contentful'
+    else if (features?.contentstack?.defaultValue)
+        provider = 'contentful'
+    else if (features?.drupal?.defaultValue)
+        provider = 'drupal'
+    else
+        provider = 'contentful'
+    let returnData: any;
+    switch (provider) {
+        case "drupal":
+            returnData = {
+                "provider": "drupal",
+                "data": (await getDrupalProductsPage()) ?? [],
+                "pagetemplate": (await getPageTemplateDrupal() ?? [])
+            }
+            break;
+        default:
+            returnData = {
+                "provider": "",
+                "data": [],
+                "pagetemplate": (await getPageTemplate() ?? [])
             }
             break;
     }

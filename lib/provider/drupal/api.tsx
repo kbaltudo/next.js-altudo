@@ -72,6 +72,13 @@ function extractNewsAndStoriesEntries(fetchResponse: {data: any}) {
     }
 }
 
+function extractProductsEntries(productEntries: { data: any; metadata: any }) {
+    return {
+        "products": productEntries?.data ? productEntries.data : "",
+        "provider": "drupal"
+    }
+}
+
 async function extractAboutEntries(carouselResponse: { data: any }, ourTeamsEnteries: { data: any }, cardBlockEnteries: { data: any }, testimonialCardEnteries: { data: any }, twoColumnTileEnteries: { data: any }) {
 
     return {
@@ -131,6 +138,13 @@ export async function getDrupalOurProfessionalPage(pageNumer: Number, location: 
             `https://dev-drupal-headless-legal.pantheonsite.io/v1/area-of-focus`
         )
     return extractOurProfessionalEntries(bioEntries, locationEntries, area_of_focusEntries)
+}
+
+export async function getDrupalProductsPage() {
+    const productEntries = await fetcher(
+        'https://dev-drupal-headless-legal.pantheonsite.io/v1/products'
+    )
+    return extractProductsEntries(productEntries)
 }
 
 export async function strapibioDetails(slug: string) {

@@ -8,6 +8,8 @@ import '../styles/theme.scss'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Router from 'next/router';
 import Loader from '../components/PageContent/Loader/Loader';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 
 export default function App({ Component, pageProps }: AppProps) {  
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
     require('bootstrap/dist/js/bootstrap.bundle.min.js');
   }
   return <>
-    {loading && <Loader />}
-    <Component {...pageProps} />
+    <Provider store={store}>
+      {loading && <Loader />}
+      <Component {...pageProps} />
+    </Provider>
   </>
 }
