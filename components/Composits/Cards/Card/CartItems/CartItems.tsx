@@ -9,7 +9,6 @@ import Description from "../../../../Elements/Description";
 
 const CartItems = ({ content, provider }: any) => {
     const returnData = GetCartItemsData(content, provider);
-    console.log(returnData, "rd");
     const dispatch = useDispatch();
     return (
         <li className={"component " + Styles.product + " list-unstyled bg-grey-primary shadow-reg mb-2 ol-lg-4 col-md-6 pb-3"}>
@@ -37,9 +36,6 @@ const CartItems = ({ content, provider }: any) => {
                     <ul>
                         <li><Link href={returnData.self}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
                         <li><Link href={returnData.self}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
-                        {/* {returnData.field_product_image.items.field_image ? returnData.field_product_image.items.field_image.map((images: any) => (
-                            <li><Link href={returnData.self}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
-                        )) : ""}   */}
                     </ul>
                 </div>
                 <div className={Styles.description}>

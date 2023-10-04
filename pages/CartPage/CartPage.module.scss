@@ -39,6 +39,15 @@
     margin: 0.5rem;
     font-size: 1rem;
   }
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+  .prod__quantity{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+  }
   .Shop_btn{
     color: White;
     background-color: Black;
@@ -48,9 +57,24 @@
   }
   .footer_div{
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+    justify-content: flex-end;
+    margin-top: 20px;
   }
-  .cart_buttons_container a{
-    margin-left: 10px;
+  .cart_buttons_container{
+    margin-top: 30px;
+    a{
+      margin-left: 10px;
+    }
+  }
+
+  .cta_remove{
+    background-color: red;
+    outline: 0;
+    border: 1px solid red;
+    border-radius: 4px;
+  }
+  
+  .total_price{
+    margin-right: 80px;
+    font-weight: bold;
   }
