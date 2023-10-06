@@ -78,3 +78,14 @@
     margin-right: 80px;
     font-weight: bold;
   }
+  .cartEmpty_page_container{
+    display: flex;
+    justify-content:space-around;
+    margin: 50px 10px;
+    .cart_buttons_container{
+      float: left;
+    }
+  }
+  .cartEmpty_text{
+    margin-top: 75px;
+  }

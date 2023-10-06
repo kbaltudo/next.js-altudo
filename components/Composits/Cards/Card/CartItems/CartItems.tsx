@@ -34,8 +34,8 @@ const CartItems = ({ content, provider }: any) => {
                 <div className={Styles.variant}>
                     <h3>EXPLORE OTHER OPTIONS</h3>
                     <ul>
-                        <li><Link href={returnData.self}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
-                        <li><Link href={returnData.self}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
+                        <li><Link href={"../product-catalogue"}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
+                        <li><Link href={"../product-catalogue"}><Image src={returnData.field_product_image.items.field_image} width={400} height={400} alt="Cart Product Image" /></Link></li>
                     </ul>
                 </div>
                 <div className={Styles.description}>

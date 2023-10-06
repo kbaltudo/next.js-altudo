@@ -14,7 +14,7 @@ const ProductsList = ({ pageResponse, provider, pageTemplate }: any) => {
   const [productsdata, setProductsdata] = useState(pageResponse.products)
   const [isLoading, setIsLoading] = useState(false);
   const cart = useSelector((state:any) => state.cart);
-
+  
   // Getting the count of items
   const getItemsCount = () => {
     return cart.reduce((accumulator: any, item: { quantity: any }) => accumulator + item.quantity, 0);

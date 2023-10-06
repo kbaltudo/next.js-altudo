@@ -11,18 +11,7 @@ import { useEffect, useState } from "react";
 
 const CartPage = () => {
   const cart = useSelector((state: any) => state.cart);
-  //console.log(cart,"cart");
-  const [cartItems, setCartItems] = useState(cart);
-  //console.log(cartItems, "ci")
   const dispatch = useDispatch();
-  useEffect(() => {
-    const cartItem = window.localStorage.getItem("cartValue");
-    if (cartItem !== null) setCartItems(JSON.parse(cartItem));
-    console.log(cartItem, "sci");
-  }, []);
-  useEffect(() => {
-    window.localStorage.setItem("cartValue", JSON.stringify(cartItems));
-  }, [cartItems]);
   const getTotalPrice = () => {
     return cart.reduce(
       (accumulator: number, item: { quantity: number; field_price: number }) =>
@@ -34,7 +23,22 @@ const CartPage = () => {
   return (
     <div className={Styles.container}>
       {cart.length === 0 ? (
-        <h1>Your Cart is Empty!</h1>
+        <div className={Styles.cartEmpty_page_container}>
+          <div className="row">
+            <div className="col-md-6">
+              <Image src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg" alt="empty-cart-image" width={600} height={600} />
+            </div>
+            <div className={Styles.cartEmpty_text + " col-md-6"}>
+              <h4>Your Cart is Empty!</h4>
+              <h6>Looks like you have not added anything to your cart. Go ahead and explore!!</h6>
+              <div className={Styles.cart_buttons_container}>
+                <Link href={"../product-catalogue"} className={Styles.Shop_btn}>
+                  Continue Shopping
+                </Link>
+            </div>
+            </div>
+          </div>
+        </div>
       ) : (
         <>
           <div className={Styles.header}>
@@ -55,32 +59,25 @@ const CartPage = () => {
               </div>
               <p>{item.title}</p>
               <div className={Styles.buttons}>
-                <button
-                  onClick={() => dispatch(incrementQuantity(item.field_id))}
-                >
-                  +
-                </button>
-                <p className={Styles.prod__quantity}>{item.quantity}</p>
-                <button
-                  onClick={() => dispatch(decrementQuantity(item.field_id))}
-                >
-                  -
-                </button>
-                
+                  <button onClick={() => dispatch(decrementQuantity(item.field_id))}>
+                    -
+                  </button>
+                  <p className={Styles.prod__quantity}>{item.quantity}</p>
+                  <button onClick={() => dispatch(incrementQuantity(item.field_id))}>
+                    +
+                  </button>                
                   <button className={Styles.cta_remove}
                     onClick={() => dispatch(removeFromCart(item.field_id))}
                   >
                     Remove
-                  </button>
-                
+                  </button>          
               </div>
-
-              <p>$ {item.quantity * item.field_price}</p>
+              <p>$ {(item.quantity * item.field_price).toFixed(2)}</p>
             </div>
           ))}
           <div className={Styles.footer_div}>
             <p className={Styles.total_price}>
-              Grand Total: $ {getTotalPrice()}
+              Grand Total: $ {getTotalPrice().toFixed(2)}
             </p>
           </div>
           <div className={Styles.cart_buttons_container}>
