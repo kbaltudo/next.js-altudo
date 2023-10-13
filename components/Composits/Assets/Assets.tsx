@@ -8,7 +8,7 @@ import Section from "../../PageStructure/Container/Section";
 import TitleDescription from "../../Molecule/TitleDescription/TitleDescription";
 import { GetAssetsData } from "./GetAssetsData";
 
-const Assets = ({ content } : any) => {
+const Assets = ({ content }: any) => {
   const returnData = GetAssetsData(content);
   let data = {
     title: returnData.title,
