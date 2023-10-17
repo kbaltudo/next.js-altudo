@@ -39,12 +39,11 @@ function LoginPage({ pageTemplate, pageResponse, provider, meta }: any) {
     <Layout header={pageTemplate} provider={provider}>
       <Head>
         <title>
-          {provider == "drupal" ? "Home Drupal" : pageResponse.title}
+          {provider == "drupal" ? "Login" : pageResponse.banner.title}
         </title>
       </Head>
       <>
         <div className="container">
-
           <form onSubmit={handleSubmit}>
             <div className='row w-75 m-auto mt-5 mb-5 border shadow rounded'>
               <div className='col-md-6 bg-warning rounded-start'>
