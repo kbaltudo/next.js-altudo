@@ -39,7 +39,7 @@ function LoginPage({ pageTemplate, pageResponse, provider, meta }: any) {
     <Layout header={pageTemplate} provider={provider}>
       <Head>
         <title>
-          {provider == "drupal" ? "Login" : pageResponse.banner.title}
+          {provider == "drupal" ? "Login" : "Login"}
         </title>
       </Head>
       <>
