@@ -189,7 +189,7 @@ export async function getDrupalAboutPage() {
             'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/91'
         ),
         twoColumnTileEnteries = await fetcher(
-            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/429'
+            'https://dev-drupal-headless-legal.pantheonsite.io/v1/page/439'
         )
     return extractAboutEntries(carouselEntries, ourTeamsEnteries, cardBlockEnteries, testimonialCardEnteries, twoColumnTileEnteries)
 }
